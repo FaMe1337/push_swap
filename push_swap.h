@@ -10,10 +10,12 @@
 typedef struct s_stack
 {
 	int	number;
+	struct s_list *previous;
 	struct s_list *next;
 }				t_stack;
 
 
 int error(char *error_message);
+void free_split(char **split);
 
 #endif
