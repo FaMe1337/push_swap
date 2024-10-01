@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 14:28:11 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/01 16:42:20 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/01 19:41:07 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ int	main(int ac, char **av)
 	int i;
 	long *array;
 
-	a = NULL;
-	b = NULL;
 	i = 1;
 	if (ac < 2)
 		error("Not enough arguments");
@@ -39,17 +37,28 @@ int	main(int ac, char **av)
 	{
 		verify_av(av);
 		verify_if_number(av[1]);
-		array = copy_to_array(av[1]);
+		array = copy_to_array_if_one_str(av[1]);
 	}
 	else if (ac > 2)
 	{
 		while (av[i])
-		{
-			verify_if_number(av[i]);
-			i++;
-		} 
+			verify_if_number(av[i++]);
+		array = copy_numbers_to_array_if_m_str(av);
 	}
-	// agora copiar verificar se tenho ints > ou < que INT_MAX e INT_MIN e se tenho repetidos
-	//stack_init(&a, av);
-	
+	//tenho array allocado, lembrar de apagar
+	stack_init(&a, &b, array);
+}
+
+int	error(char *error_message)
+{
+	ft_printf("%s\n", error_message);
+	exit(1);
+}
+
+void	stack_init(t_stack **a, t_stack **b, long *array)
+{
+	a = NULL;
+	b = NULL;
+
+	append_node(a, )
 }

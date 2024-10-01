@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:46:11 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/01 15:47:36 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/01 19:33:18 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,32 @@ int count_split(char **split)
 	return (i);
 }
 
-int error(char *error_message)
+void	copy_numbers_to_array(char **numbers, long *array, int i)
 {
-	ft_printf("%s\n", error_message);
-	exit(1);
+	array[i] = ft_atoi(numbers[i]);
+	if (array[i] > INT_MAX || array[i] < INT_MIN)
+	{
+		free(array);
+		free_split(numbers);
+		error("Number out of range");
+	}
+	if (repetition_verification(array, array[i], i))
+	{
+			free(array);
+			error("Repeated number");
+	}
+}
+
+int repetition_verification(long *array, long number, int j)
+{
+	int i;
+
+	i = 0;
+	while (i <= j - 1)
+	{
+		if (array[i] == number)
+			return (1);
+		i++;
+	}
+	return (0);
 }

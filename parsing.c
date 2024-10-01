@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:39:39 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/01 16:40:38 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/01 19:33:11 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	verify_all_numbers(char **numbers, int j, int i)
 	}
 }
 
-long	*copy_to_array(char *av)
+long	*copy_to_array_if_one_str(char *av)
 {
 	char	**numbers;
 	int		i;
@@ -86,19 +86,38 @@ long	*copy_to_array(char *av)
 		copy_numbers_to_array(numbers, array, i);
 		i++;
 	}
+	free_split(numbers);
 	for (int j = 0; j < num_elements; j++)
 		printf("%ld\n", array[j]);
-	free_split(numbers);
 	return (array);
 }
 
-void	copy_numbers_to_array(char **numbers, long *array, int i)
+long	*copy_numbers_to_array_if_m_str(char **av)
 {
-	array[i] = ft_atoi(numbers[i]);
-	if (array[i] > INT_MAX || array[i] < INT_MIN)
+	int i;
+	int j;
+	long *array;
+
+	i = 0;
+	j = 0;
+	array = malloc(sizeof(long) * count_split(av) - 1);
+	if (!array)
+		error("Malloc failed");
+	while (av[++i])
 	{
-		free(array);
-		free_split(numbers);
-		error("Number out of range");
+		array[j] = ft_atoi(av[i]);
+		if (array[j] > INT_MAX || array[j] < INT_MIN)
+		{
+			free(array);
+			error("Number out of range");
+		}
+		if (repetition_verification(array, array[j], j))
+		{
+			free(array);
+			error("Repeated number");
+		}
+		j++;
 	}
+	return (array);
 }
+
