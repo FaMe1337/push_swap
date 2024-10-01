@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 17:04:20 by famendes          #+#    #+#             */
-/*   Updated: 2024/06/27 17:35:09 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/01 16:17:51 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ size_t	ft_strlen(const char*s);
 int		ft_lstsize(t_list *lst);
 int		ft_strncmp(const char*s1, const char*s2, size_t n);
 int		ft_memcmp(const void *s1, const void*s2, size_t n);
-int		ft_atoi(const char *nptr);
+long	ft_atoi(const char *nptr);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

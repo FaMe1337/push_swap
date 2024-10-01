@@ -14,8 +14,16 @@ typedef struct s_stack
 	struct s_list *next;
 }				t_stack;
 
-
+//utils
 int error(char *error_message);
 void free_split(char **split);
+int count_split(char **split);
+
+//parsing
+void	verify_av(char **av);
+void	verify_if_number(char *av);
+long 	*copy_to_array(char *av);
+void 	copy_numbers_to_array(char **numbers, long *array, int i);
+void 	verify_all_numbers(char **numbers, int j, int i);
 
 #endif

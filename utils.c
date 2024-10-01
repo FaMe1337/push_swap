@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 17:37:05 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/01 16:23:32 by famendes         ###   ########.fr       */
+/*   Created: 2024/10/01 15:46:11 by famendes          #+#    #+#             */
+/*   Updated: 2024/10/01 15:47:36 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-long	ft_atoi(const char *nptr)
+void free_split(char **split)
 {
-	long	result;
-	int		sign;
+	int i;
 
-	result = 0;
-	sign = 1;
-	while (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
-		nptr++;
-	if (*nptr == '-')
-		sign = -1;
-	if (*nptr == '-' || *nptr == '+')
-		nptr++;
-	while (*nptr >= '0' && *nptr <= '9')
-	{
-		result = result * 10 + *nptr - '0';
-		nptr++;
-	}
-	result *= sign;
-	return (result);
+	i = 0;
+	while (split[i])
+		free(split[i++]);
+	free(split);
+}
+
+int count_split(char **split)
+{
+	int i;
+
+	i = 0;
+	while (split[i])
+		i++;
+	return (i);
+}
+
+int error(char *error_message)
+{
+	ft_printf("%s\n", error_message);
+	exit(1);
 }

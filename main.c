@@ -6,71 +6,29 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 14:28:11 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/01 12:18:57 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/01 16:42:20 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void free_split(char **split)
+/* void stack_init(t_stack **a, char **av)
 {
+	int *numbers;
+	char **split;
 	int i;
 
 	i = 0;
-	while (split[i])
-		free(split[i++]);
-	free(split);
-}
-
-void verify_av(char **av)
-{
-	char **numbers;
-	int i = 0;
-
-	numbers = ft_split(av[1], ' ');
-	if (!numbers[1])
-	{
-		free(numbers[0]);
-		free(numbers);
-		error("Not enough numbers");
-	}
-	free_split(numbers);
-}
-
-void verify_if_number(char *av)
-{
-	char **numbers;
-	int j = 0;
-
-	numbers = ft_split(av, ' ');
-	while (numbers[j])
-	{
-		int i = 0;
-		while (numbers[j][i])
-		{
-			if ((numbers[j][i] < '0' || numbers[j][i] > '9') && numbers[j][i] != '-')
-				error("Input needs to be all numbers");
-			else if (numbers[j][i] == '-' && (numbers[j][i + 1] < '0' || numbers[j][i + 1] > '9'))
-				error("Input after - needs to be a number");
-			printf("%c\n", numbers[j][i]);
-			i++;
-		}
-		j++;
-	}
-	free_split(numbers);
-}
-
-int error(char *error_message)
-{
-	ft_printf("%s\n", error_message);
-	exit(1);
-}
+	split = ft_split
+	numbers = malloc(sizeof(int))
+} */
 
 int	main(int ac, char **av)
 {
 	t_stack *a;
 	t_stack *b;
 	int i;
+	long *array;
 
 	a = NULL;
 	b = NULL;
@@ -81,6 +39,7 @@ int	main(int ac, char **av)
 	{
 		verify_av(av);
 		verify_if_number(av[1]);
+		array = copy_to_array(av[1]);
 	}
 	else if (ac > 2)
 	{
@@ -88,7 +47,9 @@ int	main(int ac, char **av)
 		{
 			verify_if_number(av[i]);
 			i++;
-		}
+		} 
 	}
 	// agora copiar verificar se tenho ints > ou < que INT_MAX e INT_MIN e se tenho repetidos
+	//stack_init(&a, av);
+	
 }
