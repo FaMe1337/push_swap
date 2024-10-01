@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:39:39 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/01 19:33:11 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/01 20:12:33 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,8 +87,6 @@ long	*copy_to_array_if_one_str(char *av)
 		i++;
 	}
 	free_split(numbers);
-	for (int j = 0; j < num_elements; j++)
-		printf("%ld\n", array[j]);
 	return (array);
 }
 
