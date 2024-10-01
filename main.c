@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 14:28:11 by famendes          #+#    #+#             */
-/*   Updated: 2024/09/29 16:08:02 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/01 12:18:57 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,18 +70,25 @@ int	main(int ac, char **av)
 {
 	t_stack *a;
 	t_stack *b;
+	int i;
 
 	a = NULL;
 	b = NULL;
+	i = 1;
 	if (ac < 2)
 		error("Not enough arguments");
-	if (ac == 2)
+	else if (ac == 2)
 	{
 		verify_av(av);
 		verify_if_number(av[1]);
-		//agora copiar
 	}
 	else if (ac > 2)
-	
-
+	{
+		while (av[i])
+		{
+			verify_if_number(av[i]);
+			i++;
+		}
+	}
+	// agora copiar verificar se tenho ints > ou < que INT_MAX e INT_MIN e se tenho repetidos
 }
