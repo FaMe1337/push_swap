@@ -11,8 +11,8 @@
 typedef struct s_stack
 {
 	int	number;
-	struct s_list *previous;
-	struct s_list *next;
+	struct s_stack *previous;
+	struct s_stack *next;
 }				t_stack;
 
 // parsing utils
@@ -32,5 +32,10 @@ long	*copy_numbers_to_array_if_n_str(char **av, int *size);
 //main utils
 void	parsing_one_string(char **av, long **array, int *size);
 void	parsing_n_string(char **av, long **array, int *size);
+
+//stack_init
+void	stack_init(t_stack **a, t_stack **b, long *array, int size);
+void	append_node(t_stack **a, int value);
+t_stack	*find_last_node(t_stack *node);
 
 #endif

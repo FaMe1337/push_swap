@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 17:37:05 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/03 13:15:36 by famendes         ###   ########.fr       */
+/*   Created: 2024/10/03 13:15:54 by famendes          #+#    #+#             */
+/*   Updated: 2024/10/03 13:16:20 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+long	ft_atol(const char *nptr)
 {
-	int	result;
+	long	result;
 	int		sign;
 
 	result = 0;

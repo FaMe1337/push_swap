@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   parsing_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:46:11 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/01 21:36:41 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/03 13:17:59 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	verify_all_numbers(char **numbers, int j, int i)
 
 void	copy_numbers_to_array(char **numbers, long *array, int i)
 {
-	array[i] = ft_atoi(numbers[i]);
+	array[i] = ft_atol(numbers[i]);
 	if (array[i] > INT_MAX || array[i] < INT_MIN)
 	{
 		free(array);

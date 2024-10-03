@@ -1,41 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/26 14:28:11 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/03 20:44:09 by famendes         ###   ########.fr       */
+/*   Created: 2024/10/03 20:56:52 by famendes          #+#    #+#             */
+/*   Updated: 2024/10/03 23:02:52 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+void	push(t_stack **src, t_stack **dst)
 {
-	t_stack *a;
-	t_stack *b;
+	t_stack *tmp;
 
-	int size;
-	long *array;
-
-	if (ac < 2)
-		error("Not enough arguments");
-	else if (ac == 2)
-		parsing_one_string(av, &array, &size);
-	else
-		parsing_n_string(av, &array, &size);
-	stack_init(&a, &b, array, size);
-	if (!sorted_stack(a))
+	if (!*src)
+		return;
+	tmp = (*src);
+	(*src) = (*src)->next;
+	if (*src)
+		(*src)->previous = NULL;
+	if (!*dst)
 	{
-		if (size == 2)
-			sa(&a);
-		else if (size == 3)
-			small_sort(&a);
-		else
-			big_sort(&a, &b);
+		*dst = tmp;
+		(*dst)->next = NULL;
 	}
-	//depois de usar toda a data limpar
-	free_stack(&a);
+	else
+	{
+		tmp->next = *dst;
+		(*dst)->previous = tmp;
+		*dst = tmp;
+	}
+}
+
+void	pa(t_stack **a, t_stack **b)
+{
+	push(b, a);
+	ft_printf("%s\n", "pa");
+}
+
+void	pb(t_stack **a, t_stack **b)
+{
+	push(a, b);
+	ft_printf("%s\n", "pb");
 }

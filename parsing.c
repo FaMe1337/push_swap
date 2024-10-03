@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:39:39 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/01 23:35:45 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/03 20:58:53 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ long	*copy_numbers_to_array_if_n_str(char **av, int *size)
 		error("Malloc for array of n strings failed");
 	while (av[++i])
 	{
-		array[j] = ft_atoi(av[i]);
+		array[j] = ft_atol(av[i]);
 		if (array[j] > INT_MAX || array[j] < INT_MIN)
 		{
 			free(array);
@@ -97,4 +97,3 @@ long	*copy_numbers_to_array_if_n_str(char **av, int *size)
 	}
 	return (array);
 }
-
