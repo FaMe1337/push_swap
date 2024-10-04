@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:39:39 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/03 20:58:53 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/04 18:28:28 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,11 +89,12 @@ long	*copy_numbers_to_array_if_n_str(char **av, int *size)
 			free(array);
 			error("Number out of range");
 		}
-		if (repetition_verification(array, array[j], j++))
+		if (repetition_verification(array, array[j], j))
 		{
 			free(array);
 			error("Repeated number");
 		}
+		j++;
 	}
 	return (array);
 }

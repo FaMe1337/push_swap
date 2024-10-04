@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 14:28:11 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/03 20:44:09 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/04 19:37:16 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,19 @@ int	main(int ac, char **av)
 	else
 		parsing_n_string(av, &array, &size);
 	stack_init(&a, &b, array, size);
-	if (!sorted_stack(a))
+	if (sorted_stack(a))
 	{
 		if (size == 2)
 			sa(&a);
 		else if (size == 3)
 			small_sort(&a);
-		else
-			big_sort(&a, &b);
+/* 		else
+			big_sort(&a, &b); */
 	}
-	//depois de usar toda a data limpar
+	while (a)
+	{
+		printf("%d\n", a->number);
+		a = a->next;
+	}
 	free_stack(&a);
 }
