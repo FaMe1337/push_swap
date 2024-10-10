@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 20:31:00 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/09 20:51:14 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/10 16:39:51 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	rev_rotate(t_stack **stack)
 	t_stack	*before_tail;
 
 	if (!stack || !*stack || !(*stack)->next)
-		return;
+		return ;
 	tail = find_last_node(*stack);
 	before_tail = tail->previous;
 	tmp = *stack;
@@ -49,7 +49,7 @@ void	rrr(t_stack **a, t_stack **b)
 	ft_printf("%s\n", "rrr");
 }
 
-void reverse_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node)
+void	reverse_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node)
 {
 	while (*b != cheapest_node->target_node && *a != cheapest_node)
 		rrr(a, b);

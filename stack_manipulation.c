@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 14:52:26 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/10 16:01:11 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/10 16:42:37 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,20 @@
 
 void	stack_init(t_stack **a, t_stack **b, long *array, int size)
 {
+	int	i;
+
 	*a = NULL;
 	*b = NULL;
-	int i;
-
 	i = 0;
 	while (i < size)
 		append_node(a, (int)array[i++]);
 	free(array);
-
 }
 
-void append_node(t_stack **a, int value)
+void	append_node(t_stack **a, int value)
 {
-	t_stack *new;
-	t_stack *last_node;
+	t_stack	*new;
+	t_stack	*last_node;
 
 	new = malloc(sizeof(t_stack));
 	if (!new)
@@ -56,7 +55,7 @@ t_stack	*find_last_node(t_stack *node)
 	return (node);
 }
 
-int stack_size(t_stack *stack)
+int	stack_size(t_stack *stack)
 {
 	int	i;
 

@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 18:07:48 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/09 21:56:49 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/10 16:32:17 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	set_target_node_a(t_stack *a, t_stack *b)
 {
-	t_stack *target_node;
+	t_stack	*target_node;
 	t_stack	*tmp_b;
 	long	best_match;
 
@@ -63,7 +63,7 @@ void	prepare_nodes_a(t_stack *a, t_stack *b)
 {
 	give_index(a);
 	give_index(b);
-	set_target_node_a(a , b);
+	set_target_node_a(a, b);
 	push_cost_a(a, b);
 	set_cheapest(a);
 }
@@ -74,7 +74,7 @@ void	set_cheapest(t_stack *stack)
 	t_stack	*cheapest_node;
 
 	if (!stack)
-		return;
+		return ;
 	cheapest_number = LONG_MAX;
 	while (stack)
 	{

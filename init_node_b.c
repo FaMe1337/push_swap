@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 22:39:42 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/09 22:12:11 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/10 16:33:00 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 static t_stack	*find_smallest_node(t_stack *stack)
 {
-	t_stack *smallest_node;
+	t_stack	*smallest_node;
 
 	if (!stack)
-		return(NULL);
+		return (NULL);
 	smallest_node = stack;
 	while (stack)
 	{
@@ -30,7 +30,7 @@ static t_stack	*find_smallest_node(t_stack *stack)
 
 static void	set_target_node_b(t_stack *a, t_stack *b)
 {
-	t_stack *target_node;
+	t_stack	*target_node;
 	t_stack	*tmp_a;
 	long	best_match;
 
@@ -55,7 +55,7 @@ static void	set_target_node_b(t_stack *a, t_stack *b)
 	}
 }
 
-void prepare_nodes_b(t_stack *a, t_stack *b)
+void	prepare_nodes_b(t_stack *a, t_stack *b)
 {
 	give_index(a);
 	give_index(b);

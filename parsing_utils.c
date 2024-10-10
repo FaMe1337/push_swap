@@ -6,15 +6,15 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:46:11 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/10 16:02:23 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/10 16:36:10 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void free_split(char **split)
+void	free_split(char **split)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (split[i])
@@ -22,9 +22,9 @@ void free_split(char **split)
 	free(split);
 }
 
-int count_split(char **split)
+int	count_split(char **split)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (split[i])
@@ -48,7 +48,6 @@ void	verify_all_numbers(char **numbers, int j, int i)
 	}
 }
 
-
 void	copy_numbers_to_array(char **numbers, long *array, int i)
 {
 	array[i] = ft_atol(numbers[i]);
@@ -60,14 +59,14 @@ void	copy_numbers_to_array(char **numbers, long *array, int i)
 	}
 	if (repetition_verification(array, array[i], i))
 	{
-			free(array);
-			error("Repeated number");
+		free(array);
+		error("Repeated number");
 	}
 }
 
-int repetition_verification(long *array, long number, int j)
+int	repetition_verification(long *array, long number, int j)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i <= j - 1)

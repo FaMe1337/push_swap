@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:39:39 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/10 12:23:32 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/10 16:36:29 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,9 @@ long	*copy_to_array_if_one_str(char *av, int *size)
 
 long	*copy_numbers_to_array_if_n_str(char **av, int *size)
 {
-	int i;
-	int j;
-	long *array;
+	int		i;
+	int		j;
+	long	*array;
 
 	i = 0;
 	j = 0;

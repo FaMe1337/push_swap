@@ -6,15 +6,15 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 22:27:15 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/09 22:12:28 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/10 16:30:33 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack *find_biggest_node(t_stack *b)
+t_stack	*find_biggest_node(t_stack *b)
 {
-	t_stack *big_node;
+	t_stack	*big_node;
 
 	big_node = b;
 	while (b)
@@ -29,7 +29,7 @@ t_stack *find_biggest_node(t_stack *b)
 t_stack	*get_cheapest(t_stack *stack)
 {
 	if (!stack)
-		return(NULL);
+		return (NULL);
 	while (stack)
 	{
 		if (stack->cheapest)
@@ -39,16 +39,16 @@ t_stack	*get_cheapest(t_stack *stack)
 	return (NULL);
 }
 
-void give_index(t_stack *stack)
+void	give_index(t_stack *stack)
 {
 	int	i;
-	int median;
+	int	median;
 
 	i = 0;
 	median = stack_size(stack) / 2;
 	if (!stack)
-		return;
-	while(stack)
+		return ;
+	while (stack)
 	{
 		stack->index = i;
 		if (i <= median)
@@ -60,7 +60,7 @@ void give_index(t_stack *stack)
 	}
 }
 
-void	cheapest_on_top(t_stack **stack,t_stack *top_node, char stack_name)
+void	cheapest_on_top(t_stack **stack, t_stack *top_node, char stack_name)
 {
 	while (*stack != top_node)
 	{

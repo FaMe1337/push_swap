@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 19:57:34 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/08 17:59:19 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/10 16:42:59 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 static void	swap(t_stack **stack)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	if (!*stack || !(*stack)->next)
-		return;
+		return ;
 	tmp = *stack;
 	*stack = (*stack)->next;
 	(*stack)->previous = NULL;

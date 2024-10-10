@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 20:56:52 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/08 17:59:11 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/10 16:39:23 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 static void	push(t_stack **src, t_stack **dst)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	if (!*src)
-		return;
+		return ;
 	tmp = (*src);
 	(*src) = (*src)->next;
 	if (*src)

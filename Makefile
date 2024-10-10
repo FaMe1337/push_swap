@@ -6,7 +6,7 @@
 #    By: famendes <famendes@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/10 12:18:35 by famendes          #+#    #+#              #
-#    Updated: 2024/10/10 12:37:01 by famendes         ###   ########.fr        #
+#    Updated: 2024/10/10 16:50:55 by famendes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,18 +24,19 @@ CFLAGS 	= -Wall -Wextra -Werror
 all:		${NAME}
 
 %.o:	%.c
-		${CC} ${CFLAGS} -ILibft -Iprintf -c $< -o $@
+		@${CC} ${CFLAGS} -ILibft -Iprintf -c $< -o $@
 
 ${NAME}:		${OBJS}
-		@make -C Libft
-		@make -C printf
-		${CC} ${CFLAGS} $^ -LLibft -lft -Lprintf -lftprintf -o ${NAME}
+		@make -s -C Libft
+		@make -s -C printf
+		@${CC} ${CFLAGS} $^ -LLibft -lft -Lprintf -lftprintf -o ${NAME}
+		@echo "All files have been created"
 
 libft:
-		make -C Libft
+		@make -C Libft
 
 printf:
-		make -C printf
+		@make -C printf
 
 clean:
 			make clean -C Libft

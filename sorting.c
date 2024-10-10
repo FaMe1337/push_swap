@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 19:36:52 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/08 22:16:53 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/10 16:40:57 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	find_biggest_number(t_stack *stack)
 {
-	int n;
+	int	n;
 
 	n = stack->number;
 	while (stack->next)
@@ -26,7 +26,7 @@ static int	find_biggest_number(t_stack *stack)
 	return (n);
 }
 
-void small_sort(t_stack **a)
+void	small_sort(t_stack **a)
 {
 	int	bigger_number;
 
