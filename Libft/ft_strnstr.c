@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 16:58:12 by famendes          #+#    #+#             */
-/*   Updated: 2024/04/23 16:34:42 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/10 12:07:28 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,3 @@ char	*ft_strnstr(const char*big, const char*little, size_t len)
 	}
 	return (NULL);
 }
-
-/* int	main(void)
-{
-	char	*ptr;
-	
-	ptr = ft_strnstr("aaabcabcd", "a", 1);
-	printf("%s", ptr);
-} */

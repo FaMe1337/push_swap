@@ -6,13 +6,13 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 19:57:34 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/03 23:16:30 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/08 17:59:19 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(t_stack **stack)
+static void	swap(t_stack **stack)
 {
 	t_stack *tmp;
 

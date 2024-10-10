@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 22:42:34 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/04 19:22:26 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/10 12:10:00 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ int 	sorted_stack(t_stack *stack)
 	while (stack->next)
 	{
 		if (stack->number > stack->next->number)
-			return (1);
+			return (0);
 		stack = stack->next;
 	}
 	ft_printf("%s\n", "Stack is sorted");
-	return (0);
+	return (1);
 }

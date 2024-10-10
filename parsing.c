@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:39:39 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/04 18:28:28 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/10 12:23:32 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 void	verify_av(char **av)
 {
 	char	**numbers;
-	int		i;
 
-	i = 0;
 	numbers = ft_split(av[1], ' ');
 	if (!numbers[1])
 	{

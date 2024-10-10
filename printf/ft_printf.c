@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 16:36:36 by famendes          #+#    #+#             */
-/*   Updated: 2024/08/20 16:55:49 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/10 12:07:49 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,3 @@ int	ft_printf(const char *format, ...)
 	va_end(ap);
 	return (i);
 }
-
-/* int	main()
-{
-	int	count = 0;
-	int	count1 = 0;
-
-	count = ft_printf("o resultado e: %x\n", -1);
-	count1 = printf("o resultado e: %x\n", -1);
-	ft_printf("%i\n", count);
-	printf("%i\n", count1);
-} */
