@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 14:28:11 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/10 12:01:55 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/10 16:04:02 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	main(int ac, char **av)
 	int size;
 	long *array;
 
+	size = 0;
+	array = 0;
 	if (ac < 2)
 		error("Not enough arguments");
 	else if (ac == 2)
