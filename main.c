@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 14:28:11 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/10 16:33:28 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/14 18:11:10 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int ac, char **av)
 	size = 0;
 	array = 0;
 	if (ac < 2)
-		error("Not enough arguments");
+		return (0);
 	else if (ac == 2)
 		parsing_one_string(av, &array, &size);
 	else
@@ -38,4 +38,5 @@ int	main(int ac, char **av)
 			big_sort(&a, &b, size);
 	}
 	free_stack(&a);
+	return (0);
 }

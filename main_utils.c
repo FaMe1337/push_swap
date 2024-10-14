@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 22:42:34 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/10 16:34:26 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/14 17:56:35 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int	error(char *error_message)
 {
-	ft_printf("%s\n", error_message);
+	ft_putstr_fd(error_message, 2);
+	ft_printf("\n");
 	exit(1);
 }
 
@@ -55,6 +56,5 @@ int	sorted_stack(t_stack *stack)
 			return (0);
 		stack = stack->next;
 	}
-	ft_printf("%s\n", "Stack is sorted");
 	return (1);
 }

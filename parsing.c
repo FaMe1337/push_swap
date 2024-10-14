@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:39:39 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/10 16:36:29 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/14 18:25:25 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,15 @@ void	verify_av(char **av)
 	char	**numbers;
 
 	numbers = ft_split(av[1], ' ');
-	if (!numbers[1])
+	if (!numbers[0])
 	{
-		free(numbers[0]);
-		free(numbers);
-		error("Not enough numbers");
+		free_split(numbers);
+		exit (0);
+	}
+	else if (!numbers[1])
+	{
+		free_split(numbers);
+		exit (0);
 	}
 	free_split(numbers);
 }
@@ -59,7 +63,7 @@ long	*copy_to_array_if_one_str(char *av, int *size)
 	if (!array)
 	{
 		free_split(numbers);
-		error("Malloc for array of one string failed");
+		return (NULL);
 	}
 	i = 0;
 	while (numbers[i])
@@ -78,19 +82,19 @@ long	*copy_numbers_to_array_if_n_str(char **av, int *size)
 	j = 0;
 	array = malloc(sizeof(long) * (*size = count_split(av) - 1));
 	if (!array)
-		error("Malloc for array of n strings failed");
+		return (NULL);
 	while (av[++i])
 	{
 		array[j] = ft_atol(av[i]);
 		if (array[j] > INT_MAX || array[j] < INT_MIN)
 		{
 			free(array);
-			error("Number out of range");
+			error("Error");
 		}
 		if (repetition_verification(array, array[j], j))
 		{
 			free(array);
-			error("Repeated number");
+			error("Error");
 		}
 		j++;
 	}

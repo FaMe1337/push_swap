@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:46:11 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/10 16:36:10 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/14 18:04:09 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ void	verify_all_numbers(char **numbers, int j, int i)
 			&& numbers[j][i] != '-' && numbers[j][i] != '+')
 	{
 		free_split(numbers);
-		error("Input needs to be all numbers");
+		error("Error");
 	}
 	else if (numbers[j][i] == '-' && (numbers[j][i + 1] < '0'
 			|| numbers[j][i + 1] > '9'))
 	{
 		free_split(numbers);
-		error("Input after - needs to be a number");
+		error("Error");
 	}
 }
 
@@ -55,12 +55,12 @@ void	copy_numbers_to_array(char **numbers, long *array, int i)
 	{
 		free(array);
 		free_split(numbers);
-		error("Number out of range");
+		error("Error");
 	}
 	if (repetition_verification(array, array[i], i))
 	{
 		free(array);
-		error("Repeated number");
+		error("Error");
 	}
 }
 

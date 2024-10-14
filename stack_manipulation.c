@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 14:52:26 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/10 16:42:37 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/14 18:04:55 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	append_node(t_stack **a, int value)
 
 	new = malloc(sizeof(t_stack));
 	if (!new)
-		error("Malloc for new node failed");
+		return ;
 	new->number = value;
 	new->cheapest = 0;
 	new->next = NULL;
