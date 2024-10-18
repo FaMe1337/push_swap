@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:39:39 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/14 18:25:25 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/18 17:12:59 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	verify_av(char **av)
 	}
 	else if (!numbers[1])
 	{
+		verify_all_numbers(numbers, 0, 0);
 		free_split(numbers);
 		exit (0);
 	}
