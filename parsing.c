@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:39:39 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/21 17:43:06 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/22 00:20:11 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,28 @@ void	verify_if_number(char *av)
 	}
 	free_split(numbers);
 }
+void	verify_if_number_in_n_string(char *av, char **numbers)
+{
+	int		j;
+	int		i;
+
+	j = 0;
+	if (!*av)
+	{
+		free_split(numbers);
+		error("Error");
+	}
+	while (numbers[j])
+	{
+		i = 0;
+		while (numbers[j][i])
+		{
+			verify_all_numbers(numbers, j, i);
+			i++;
+		}
+		j++;
+	}
+}
 
 long	*copy_to_array_if_one_str(char *av, int *size)
 {
@@ -83,18 +105,20 @@ long	*copy_numbers_to_array_if_n_str(char **av, int *size)
 
 	i = -1;
 	j = 0;
-	array = malloc(sizeof(long) * (*size = count_split(av) - 1));
+	array = malloc(sizeof(long) * (*size = count_split(av)));
 	while (av[++i])
 	{
 		array[j] = ft_atol(av[i]);
 		if (array[j] > INT_MAX || array[j] < INT_MIN)
 		{
 			free(array);
+			free_split(av);
 			error("Error");
 		}
 		if (repetition_verification(array, array[j], j))
 		{
 			free(array);
+			free_split(av);
 			error("Error");
 		}
 		j++;

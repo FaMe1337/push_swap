@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 16:36:57 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/10 16:38:46 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/21 23:58:05 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	verify_all_numbers(char **numbers, int j, int i);
 //parsing
 void	verify_av(char **av);
 void	verify_if_number(char *av);
+void	verify_if_number_in_n_string(char *av, char **numbers);
 long	*copy_to_array_if_one_str(char *av, int *size);
 long	*copy_numbers_to_array_if_n_str(char **av, int *size);
 

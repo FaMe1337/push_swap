@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 17:04:20 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/08 22:17:16 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/21 23:22:24 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void*));
 //int		ft_atoi_base(char *str, int base);
 char	*get_next_line(int fd);
 long	ft_atol(const char *nptr);
+char	*ft_strcat(char*dst, const char*src);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:46:11 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/21 18:14:54 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/21 23:07:31 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	verify_all_numbers(char **numbers, int j, int i)
 	{
 		free_split(numbers);
 		error("Error");
-	}	
+	}
 	else if (numbers[j][i] == '+' && (numbers[j][i + 1] < '0'
 			|| numbers[j][i + 1] > '9'))
 	{
