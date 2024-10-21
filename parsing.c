@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:39:39 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/18 17:12:59 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/21 17:43:06 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ void	verify_if_number(char *av)
 	int		i;
 
 	j = 0;
+	if (!*av)
+		error("Error");
 	numbers = ft_split(av, ' ');
 	while (numbers[j])
 	{
@@ -79,11 +81,9 @@ long	*copy_numbers_to_array_if_n_str(char **av, int *size)
 	int		j;
 	long	*array;
 
-	i = 0;
+	i = -1;
 	j = 0;
 	array = malloc(sizeof(long) * (*size = count_split(av) - 1));
-	if (!array)
-		return (NULL);
 	while (av[++i])
 	{
 		array[j] = ft_atol(av[i]);
@@ -101,3 +101,4 @@ long	*copy_numbers_to_array_if_n_str(char **av, int *size)
 	}
 	return (array);
 }
+

@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:46:11 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/18 16:33:05 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/21 18:14:54 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void	copy_numbers_to_array(char **numbers, long *array, int i)
 	if (repetition_verification(array, array[i], i))
 	{
 		free(array);
+		free_split(numbers);
 		error("Error");
 	}
 }

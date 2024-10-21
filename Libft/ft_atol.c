@@ -6,7 +6,7 @@
 /*   By: famendes <famendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 13:15:54 by famendes          #+#    #+#             */
-/*   Updated: 2024/10/03 13:16:20 by famendes         ###   ########.fr       */
+/*   Updated: 2024/10/21 15:55:42 by famendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ long	ft_atol(const char *nptr)
 		sign = -1;
 	if (*nptr == '-' || *nptr == '+')
 		nptr++;
-	while (*nptr >= '0' && *nptr <= '9')
+	while (*nptr >= '0' && *nptr <= '9' && result <= INT_MAX)
 	{
 		result = result * 10 + *nptr - '0';
 		nptr++;
