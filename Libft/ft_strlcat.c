@@ -30,15 +30,3 @@ size_t	ft_strlcat(char*dst, const char*src, size_t size)
 	dst[lenght] = '\0';
 	return (ft_strlen(dst) + ft_strlen(&src[j]));
 }
-char	*ft_strcat(char*dst, const char*src)
-{
-	unsigned int	j;
-	unsigned int	lenght;
-
-	j = 0;
-	lenght = ft_strlen(dst);
-	while (src[j])
-		dst[lenght++] = src[j++];
-	dst[lenght] = '\0';
-	return (dst);
-}
